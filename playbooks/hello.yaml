@@ -8,13 +8,7 @@
       dest: /tmp/testfile.txt
   - name: Create a user
     user:
-      name: yev2 # required. Name of the user to create, remove or modify.
+      name: yev # required. Name of the user to create, remove or modify.
       comment: undefined # not required. Optionally sets the description (aka I(GECOS)) of user account.
       force: yes
       shell: /bin/sh
-  - name: Make sure wget is installed
-    package:
-      state: present # required. Whether to install (C(present)), or remove (C(absent)) a package. Other states depend on the underlying package module, i.e C(latest).
-      name: wget # required. Package name, or package specifier with version, like C(name-1.0).,Be aware that packages are not always named the same and this module will not 'translate' them per distro.
-      use: auto # not required. The required package manager module to use (yum, apt, etc). The default 'auto' will use existing facts or try to autodetect it.,You should only use this field if the automatic selection is not working for some reason.
-
